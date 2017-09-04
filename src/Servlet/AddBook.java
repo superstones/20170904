@@ -28,11 +28,7 @@ public class AddBook extends HttpServlet {
         book.setBookName(request.getParameter("BookName"));
         book.setBookAuthor(request.getParameter("BookAuthor"));
         book.setBookPrice(Float.valueOf(request.getParameter("BookPrice")));
-//        List<Book> list= (List<Book>) request.getSession().getAttribute("list");
-//        if (list==null){
-//            list=new ArrayList<Book>();
-//        }
-//        list.add(book);
+
         list.add(book);
         request.setAttribute("list", list);
         request.getRequestDispatcher("ShowBook.jsp").forward(request, response);
