@@ -11,34 +11,10 @@
 <html>
 <head>
     <title>Title</title>
-    <%--<%--%>
-        <%--List<Book> list = (List<Book>) session.getAttribute("l");--%>
-        <%--System.out.println(list);--%>
-        <%--if (list == null || list.size() < 1) {--%>
 
-
-            <%--System.out.println("无数据");--%>
-        <%--} else {--%>
-            <%--for (Book book : list) {--%>
-    <%--%>--%>
-    <%--<%=book.getBookName()%>--%>
-    <%--<%=book.getBookAuthor()%>--%>
-    <%--<%=book.getBookPrice()%>--%>
-
-    <%--<%--%>
-
-
-            <%--}--%>
-
-
-        <%--}--%>
-
-
-    <%--%>--%>
-    <%--${sessionScope.list[0].name}--%>
 </head>
 <body>
-<table border="1px">
+<table align="center" border="1px">
     <tr>
         <td>书名</td>
         <td>作者</td>
@@ -53,8 +29,6 @@
         <%--<c:out value="${i}"/>--%>
     <%--</c:forEach>--%>
 
-
-
     <c:forEach var="book" items="${requestScope.list}">
         <tr>
             <td><c:out value="${book.bookName}"/></td>
@@ -63,6 +37,6 @@
         </tr>
     </c:forEach>
 </table>
-<a href="AddBook.jsp">继续添加</a>
+<a href="AddBook.jsp" >继续添加</a>
 </body>
 </html>
