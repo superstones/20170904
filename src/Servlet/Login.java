@@ -20,5 +20,7 @@ public class Login extends HttpServlet {
 
         String user=request.getParameter("user");
         String password=request.getParameter("password");
+
+
     }
 }

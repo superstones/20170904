@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  * Created by Administrator on 2017/9/4.
- */@WebFilter(filterName = "Filter" ,urlPatterns = "/AddBook")
+ */@WebFilter(filterName = "Filter" ,urlPatterns = "/*")
 
 public class Filter implements javax.servlet.Filter {
     private String encoding;

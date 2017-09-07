@@ -22,10 +22,8 @@
         <td>价格</td>
     </tr>
         <%
-
             for (Book book: (List<Book>) request.getAttribute("bookList")){
                pageContext.setAttribute("book",book);
-
         %>
 
 

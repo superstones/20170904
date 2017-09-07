@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/9/4.
  */
-@WebServlet(name = "AddBook", urlPatterns = "/AddBook")
+@WebServlet(name = "AddBook",urlPatterns = "/AddBook")
 public class AddBook extends HttpServlet {
 
 //    private List<Book> list = null;
@@ -36,7 +36,6 @@ public class AddBook extends HttpServlet {
 //        list.add(book);
 //        request.setAttribute("list", list);
         request.setAttribute("bookList",bookDao.getBooks());
-
         request.getRequestDispatcher("ShowBook.jsp").forward(request, response);
 
     }
@@ -44,7 +43,7 @@ public class AddBook extends HttpServlet {
     /**
      * 第一次访问
      *
-     * @throws ServletException
+     * @throws
 //     */
 //    @Override
 //    public void init() throws ServletException {

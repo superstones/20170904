@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2017/9/6.
  */
-@WebFilter(filterName = "Filter2",urlPatterns = "/*")
+@WebFilter(filterName = "Filter2",urlPatterns = "/ShowBook.jsp")
 public class Filter2 implements Filter {
     public void destroy() {
     }
@@ -19,19 +19,15 @@ public class Filter2 implements Filter {
         String username= (String) ((HttpServletRequest) req).getSession().getAttribute("user");
         if (username!=null){
 
-
-
             chain.doFilter(req, resp);
-
 
         }
         else
         {
-
-            request.getRequestDispatcher("Fail.jsp").forward(request,resp);
+            request.setAttribute("error","请先登录");
+            request.getRequestDispatcher("Login.jsp").forward(request,resp);
 
         }
-
 
 
 
