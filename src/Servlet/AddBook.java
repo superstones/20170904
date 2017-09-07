@@ -1,6 +1,7 @@
 package Servlet;
 
 import Bean.Book;
+import Dao.BookDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,9 @@ import java.util.List;
 @WebServlet(name = "AddBook", urlPatterns = "/AddBook")
 public class AddBook extends HttpServlet {
 
-    private List<Book> list = null;
+//    private List<Book> list = null;
+    private BookDao bookDao=new BookDao();
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -28,9 +31,12 @@ public class AddBook extends HttpServlet {
         book.setBookName(request.getParameter("BookName"));
         book.setBookAuthor(request.getParameter("BookAuthor"));
         book.setBookPrice(Float.valueOf(request.getParameter("BookPrice")));
+        bookDao.AddBook(book);
 
-        list.add(book);
-        request.setAttribute("list", list);
+//        list.add(book);
+//        request.setAttribute("list", list);
+        request.setAttribute("bookList",bookDao.getBooks());
+
         request.getRequestDispatcher("ShowBook.jsp").forward(request, response);
 
     }
@@ -39,10 +45,10 @@ public class AddBook extends HttpServlet {
      * 第一次访问
      *
      * @throws ServletException
-     */
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        list = new ArrayList<>();
-    }
+//     */
+//    @Override
+//    public void init() throws ServletException {
+//        super.init();
+//        list = new ArrayList<>();
+//    }
 }
